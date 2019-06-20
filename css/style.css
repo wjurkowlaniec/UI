@@ -75,6 +75,22 @@ font-weight: 200;
   .topnav .login-container {
     float: none;
   }
+  .column-grid h3 {
+    font-size: 13px;
+    font-weight:normal;
+  }
+
+  .column-grid {
+    
+    margin-right: 50px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    width:300px;
+    height: 100px;
+  
+  }
+
+  
   .topnav a, .topnav input[type=text], .topnav .login-container button {
     float: none;
     display: block;
@@ -158,11 +174,6 @@ box-shadow: none;
 
 /* property page*/
 
-.column-grid {
-  float: left;
-  width: 33.33%;
-}
-
 .register-property{
   background: blue;
 }
@@ -173,13 +184,13 @@ box-shadow: none;
   box-sizing: border-box;
 }
 
-.colum-grid {
+.column-grid {
   float: left;
-  width: 33.33%;
+  width: 400px;
   padding: 10px;
   height: 300px; 
-  background-color: white;
-  border-radius: 5px;
+   border-radius: 5px;
+  
 
 }
 
@@ -192,8 +203,8 @@ box-shadow: none;
 .img{
   height:150px;
   width:130px;
-  margin:20px;
-   background-color:white;
+  margin:3px;
+  background-color:white;
   border: 5px solid grey; 
   border-radius: 20px;
 }
@@ -329,6 +340,50 @@ box-shadow: none;
 
 .sold{
   display:inline
+}
+
+
+/* for radio checking sold things*/
+
+.switch-field {
+	display: flex;
+	margin-bottom: 36px;
+	overflow: hidden;
+}
+
+.switch-field input {
+	position: absolute !important;
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	width: 1px;
+	border: 0;
+	overflow: hidden;
+}
+
+.switch-field label {
+	background-color: #e4e4e4;
+	color: rgba(0, 0, 0, 0.6);
+	font-size: 14px;
+	line-height: 1;
+	text-align: center;
+	padding: 8px 16px;
+	margin-right: -1px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+	transition: all 0.1s ease-in-out;
+}
+
+.switch-field input:checked + label {
+	background-color: #a5dc86;
+	box-shadow: none;
+}
+
+.switch-field label:first-of-type {
+	border-radius: 4px 0 0 4px;
+}
+
+.switch-field label:last-of-type {
+	border-radius: 0 4px 4px 0;
 }
 
 /* for footer */
