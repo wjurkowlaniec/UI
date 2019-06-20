@@ -87,6 +87,7 @@ font-weight: 200;
     margin-bottom: 20px;
     width:300px;
     height: 100px;
+    border: 1px solid white;
   
   }
 
@@ -189,8 +190,9 @@ box-shadow: none;
   width: 400px;
   padding: 10px;
   height: 300px; 
-   border-radius: 5px;
-  
+  border-radius: 5px;
+  border: 1px solid white;
+  margin: 5px;
 
 }
 
