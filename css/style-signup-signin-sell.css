@@ -64,31 +64,18 @@ font-weight: 200;
   float: right;
 }
 
+#banner{
+  border-bottom: 30px solid white;
+}
 #post{
   
   margin: 10px;
 }
 
-@media screen and (max-width: 600px) {
-  .topnav .login-container {
-    float: none;
-  }
-  .topnav a, .topnav input[type=text], .topnav .login-container button {
-    float: none;
-    display: block;
-    text-align: left;
-    width: 100%;
-    margin: 0;
-    padding: 14px;
-  }
-  .topnav input[type=text] {
-    border: 1px solid #ccc;  
-  }
-}
 
 .login {
 margin: 20px auto;
-width: 300px;
+width: 600px;
 }
 .login-screen {
 background-color: #FFF;
@@ -108,7 +95,7 @@ text-align: center;
 margin-bottom: 10px;
 }
 
-input {
+.login-field {
 text-align: center;
 background-color: #ECF0F1;
 border: 2px solid transparent;
@@ -116,7 +103,7 @@ border-radius: 3px;
 font-size: 16px;
 font-weight: 200;
 padding: 10px 0;
-width: 250px;
+width: 300px;
 transition: border .5s;
 }
 
@@ -153,9 +140,6 @@ box-shadow: none;
    margin-top: 12px;
 }
 
-.boolean{
-  float:left;
-}
 
 .submit-user {
   border: 2px solid transparent;
@@ -197,3 +181,65 @@ box-shadow: none;
   text-align: center;
   font-size: 13px;
   }
+
+  
+
+@media screen and (max-width: 600px) {
+  .topnav .login-container {
+    float: none;
+  }
+  .column-grid h3 {
+    font-size: 13px;
+    font-weight:normal;
+  }
+
+  .column-grid {
+    
+    margin-right: 50px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    width:300px;
+    height: 100px;
+    border: 1px solid white;
+  
+  }
+
+    .topnav a, .topnav input[type=text], .topnav .login-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;  
+  }
+  .login{ 
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+
+  }
+  .login-screen{
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+    
+  }
+  .input [type=text] label {
+    float: none;
+    display: block;
+    text-align: left;
+    
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+}
