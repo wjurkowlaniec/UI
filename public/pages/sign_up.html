@@ -1,0 +1,129 @@
+<!doctype html>
+
+<html>
+
+<head>
+
+
+ <meta>
+        <link rel="stylesheet" type="text/css" href="../css/style-signup-signin-sell.css">
+        <title> PropertyPro LITE</title>
+        <link rel="icon" type="image/ico" href="../image/bar-icon.png" />
+</head>
+
+<body>
+
+
+
+      <a class="sell" href="sell.html"><img src="../image/header.png" height="80px" width="200px"></a>
+
+
+<div class="topnav">
+
+
+    <a href="../index.html"><strong>PROPERTY FOR RENT</strong></a>
+
+   <a class="register" href="sell.html"><strong>SELL A PROPERTY</strong></a>
+
+
+<div class="login-container">
+    <form action="post">
+
+      <a   href="login.html">Sign In </a>
+      <a  class="active"href="sign_up.html">Sign up</a>
+    </form>
+  </div>
+</div>
+
+
+<div class="login">
+        <div class="login-screen">
+            <div class="app-title">
+                <h1>Sign Up</h1>
+            </div>
+
+            <div class="login-form">
+
+
+               <div class="control-group">
+                <input type="text" class="login-field" value="" placeholder="Email" id="login-name">
+                <label class="login-field-icon fui-user" for="login-name"></label>
+                </div>
+
+                <div class="control-group">
+                <input type="text" class="login-field" value="" placeholder="First name" id="login-name">
+                <label class="login-field-icon fui-user" for="login-name"></label>
+                </div>
+
+                <div class="control-group">
+                <input type="password" class="login-field" value="" placeholder="Second name" id="login-pass">
+                <label class="login-field-icon fui-lock" for="login-pass"></label>
+                </div>
+
+               
+                 <div class="control-group">
+                <input type="password" class="login-field" value="" placeholder="set a password" id="login-pass">
+                <label class="login-field-icon fui-lock" for="login-pass"></label>
+                </div>
+
+                 <div class="control-group">
+                <input type="text" class="login-field" value="" placeholder="Phone number" id="login-pass">
+                <label class="login-field-icon fui-lock" for="login-pass"></label>
+                </div>
+
+                 <div class="control-group">
+                <input type="text" class="login-field" value="" placeholder="Address" id="login-pass">
+                <label class="login-field-icon fui-lock" for="login-pass"></label>
+                </div>
+                  <div class="control-group">
+                                     
+                    <div class="regular-field">
+                     <p>Are you admin?<p> 
+                       <input type="radio" id="radio-six" name="notaswitch-one" value="yes" checked/>
+                       <label for="radio-six">No</label>
+                       <input type="radio" id="radio-seven" name="notaswitch-one" value="maybe" />
+                       <label for="radio-seven">Yes</label>
+                     </div>  
+                 </div>
+
+
+                <form >
+                  <a class="btn btn-primary btn-large btn-block" href="./user-property.html">Submit</a>   
+              </form>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">s
+&copy; 2019  Designed by BYAMUNGU desire || Andela Developer Challenge
+ </div> 
+
+</body>
+
+<script type="text/javascript">
+     var usersName = ["Desire","Mamady"];
+     var usersPass = [123456, 123456];
+     function validate(){
+       const username = document.getElementById('login-name').value;
+       const password = document.getElementById('login-pass').value;
+       
+      
+        for (var i = 0; i < usersName.length; i++) {
+         if (usersName[i] == username && usersPass[i] == password) {
+           alert(username);
+                      alert("you have successfully log in the property page");
+           return;
+         }
+         else{
+          alert("Plz input required data ");
+           return;
+         }
+           
+      }
+   
+     }
+</script>
+
+
+</html

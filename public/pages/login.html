@@ -1,0 +1,96 @@
+<!doctype html>
+
+<html>
+
+<head>
+
+
+ <meta>
+        <link rel="stylesheet" type="text/css" href="../css/style-signup-signin-sell.css">
+        <title> PropertyPro LITE</title>
+        <link rel="icon" type="image/ico" href="../image/bar-icon.png" />
+</head>
+
+<body>
+
+
+
+  <a class="sell" href="sell.html"><img src="../image/header.png" height="80px" width="200px"></a>
+
+
+
+<div class="topnav">
+
+
+  <a href="../index.html"><strong>PROPERTY FOR RENT</strong></a>
+
+   <a class="register" href="sell.html"><strong>SELL A PROPERTY</strong></a>
+
+
+<div class="login-container">
+    <form action="post">
+
+      <a   class="active" href="login.html">Sign In </a>
+      <a  href="sign_up.html">Sign up</a>
+    </form>
+  </div>
+</div>
+
+    <div class="login">
+        <div class="login-screen">
+            <div class="app-title">
+                <h1>Sign In</h1>
+            </div>
+
+            <div class="login-form">
+                <div class="control-group">
+                <input type="text" class="login-field" value="" placeholder="username" id="login-name">
+                <label class="login-field-icon fui-user" for="login-name"></label>
+                </div>
+
+                <div class="control-group">
+                <input type="password" class="login-field" value="" placeholder="password" id="login-pass">
+                <label class="login-field-icon fui-lock" for="login-pass"></label>
+                </div>
+
+               
+                <form >
+                   
+                      <a class="btn btn-primary btn-large btn-block"  onclick = 'validate()' href="user-property.html" >Submit</a>
+                </form>
+                <a class="login-link" href="#">Lost your password?</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+&copy; 2019  Designed by BYAMUNGU desire || Andela Developer Challenge
+ </div> 
+
+</body>
+
+<script type="text/javascript">
+     var usersName = ["Desire","Mamady"];
+     var usersPass = [123456, 123456];
+     function validate(){
+       const username = document.getElementById('login-name').value;
+       const password = document.getElementById('login-pass').value;
+       
+      
+        for (var i = 0; i < usersName.length; i++) {
+         if (usersName[i] == username && usersPass[i] == password) {
+           alert(username);
+                      alert("you have successfully log in the property page");
+           return;
+         }
+         else{
+          alert("Username doesn't exist ");
+           return;
+         }
+           
+      }
+   
+     }
+</script>
+
+</html>
