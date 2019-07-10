@@ -12,7 +12,6 @@ chai.use(chaiHttp);
 describe('GET and POST AD  ROUTES', () => {
 
 
-
 	it('it should create new property advert ', function (done) {
     
 		this.timeout(10000);
@@ -35,6 +34,7 @@ describe('GET and POST AD  ROUTES', () => {
 			.attach('image','src/test/Screenshot (24).png')
 			.field(body)
 			.end((err, res) => {
+				if(err) done(err)
 				expect(err).to.equal(null);
 				expect(res.status).to.equal(200);
 				expect(res.body).to.be.a('object');
@@ -46,6 +46,7 @@ describe('GET and POST AD  ROUTES', () => {
 		chai.request(app)
 			.get('/api/v1/property')
 			.end((err, res) => {
+				if (err) done(err)
 				expect(res.status).to.equal(201);
 				done();
 			});
@@ -55,6 +56,7 @@ describe('GET and POST AD  ROUTES', () => {
 		chai.request(app)
 			.get('/api/v1/property-advert/search?type=flat')
 			.end((err, res) => {
+				if (err) done(err)
 				expect(res.status).to.equal(201);
 				done();
 			});
@@ -82,6 +84,7 @@ describe('GET and POST AD  ROUTES', () => {
 			.attach('image','src/test/Screenshot (24).png')
 			.field(body)
 			.end((err, res) => {
+				if (err) done(err)
 				expect(res.status).to.equal(403);
 				expect(res.body).to.be.a('object');
 				done();
@@ -108,6 +111,7 @@ describe('GET and POST AD  ROUTES', () => {
 			.attach('image','src/test/Screenshot (24).png')
 			.field(body)
 			.end((err, res) => {
+				if (err) done(err)
 				expect(res.status).to.equal(403);
 				expect(res.body).to.be.a('object');
 				done();
@@ -137,6 +141,7 @@ describe('GET and POST AD  ROUTES', () => {
 			.set('Authorization','Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb2RlIjoiJDJiJDEwJE1EQk9PZXQ5QWVMQ3NVQURZTk5NWU8wVmF1d2QueXJJVGNTeUJKWFIuYVR5dzFlYmsuLmNhIiwiaWQiOjIzNDAxMzAwNTAwMSwibmV3VXNlck5vdG9rZW4iOnsiZmlyc3RfbmFtZSI6ImhmZmZkZmRmIiwibGFzdF9uYW1lIjoiZmVrbGl4IiwiZW1haWwiOiJjbGluZ3RvbmV5aXR1b3lvQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJE1EQk9PZXQ5QWVMQ3NVQURZTk5NWU8wVmF1d2QueXJJVGNTeUJKWFIuYVR5dzFlYmsuLmNhIiwiYWRkcmVzcyI6ImJsb2NrIDE5OSBmbGF0IDQiLCJwaG9uZV9udW1iZXIiOiIwODAxMjM0MjQ1OSIsImdlbmRlciI6Im1hbGUiLCJpc19BZG1pbiI6dHJ1ZX0sImlhdCI6MTU2MTk3NjY0MH0.P5L7HTKcofHiElkLA86hNSPMl0yxRgEllyJgrYaIphk')
 			.field(body)
 			.end((err, res) => {
+				if (err) done(err)
 				expect(res.status).to.equal(403);
 				expect(res.body).to.be.a('object');
 				done();
@@ -161,6 +166,7 @@ describe('GET and POST AD  ROUTES', () => {
 			.set('Authorization','Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb2RlIjoiJDJiJDEwJE1EQk9PZXu5QWVMQ3NVQURZTk5NWU8wVmF1d2QueXJJVGNTeUJKWFIuYVR5dzFlYmsuLmNhIiwiaWQiOjIzNDAxMzAwNTAwMSwibmV3VXNlck5vdG9rZW4iOnsiZmlyc3RfbmFtZSI6ImhmZmZkZmRmIiwibGFzdF9uYW1lIjoiZmVrbGl4IiwiZW1haWwiOiJjbGluZ3RvbmV5aXR1b3lvQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJE1EQk9PZXQ5QWVMQ3NVQURZTk5NWU8wVmF1d2QueXJJVGNTeUJKWFIuYVR5dzFlYmsuLmNhIiwiYWRkcmVzcyI6ImJsb2NrIDE5OSBmbGF0IDQiLCJwaG9uZV9udW1iZXIiOiIwODAxMjM0MjQ1OSIsImdlbmRlciI6Im1hbGUiLCJpc19BZG1pbiI6dHJ1ZX0sImlhdCI6MTU2MTk3NjY0MH0.P5L7HTKcofHiElkLA86hNSPMl0yxRgEllyJgrYaIphk')
 			.field(body)
 			.end((err, res) => {
+				if (err) done(err)
 				expect(res.status).to.equal(401);
 				expect(res.body).to.be.a('object');
 				done();
@@ -184,6 +190,7 @@ describe('GET and POST AD  ROUTES', () => {
 			.post('/api/v1/property-advert')
 			.send(body)
 			.end((err, res) => {
+				if (err) done(err)
 				expect(res.status).to.equal(401);
 				expect(res.body).to.be.a('object');
 				done();
@@ -196,6 +203,7 @@ describe('GET and POST AD  ROUTES', () => {
 		chai.request(app)
 			.get('/api/v1/property-advert/43501')
 			.end((err, res) => {
+				if (err) done(err)
 				expect(res.status).to.equal(201);
 				done();
 			});
@@ -205,6 +213,7 @@ describe('GET and POST AD  ROUTES', () => {
 		chai.request(app)
 			.get('/api/v1/property-advert/4350')
 			.end((err, res) => {
+				if (err) done(err)
 				expect(res.status).to.equal(404);
 				done();
 			});
@@ -226,6 +235,7 @@ describe('GET and POST AD  ROUTES', () => {
 			.attach('image','src/test/Screenshot (24).png')
 			.field(body)
 			.end((err, res) => {
+				if (err) done(err)
 				expect(res.status).to.equal(500);
 				done();
 			});
@@ -247,7 +257,7 @@ describe('GET and POST AD  ROUTES', () => {
 			.attach('image','src/test/Screenshot (24).png')
 			.field(body)
 			.end((err, res) => {
-				expect(err).to.equal(null);
+				if (err) done(err)
 				expect(res.body.status).to.equal(200);
 				expect(res.body).to.be.a('object');
 				done();
@@ -260,6 +270,7 @@ describe('GET and POST AD  ROUTES', () => {
 			.delete('/api/v1/property-advert/43501')
 			.set('Authorization','Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb2RlIjoiJDJiJDEwJE1EQk9PZXQ5QWVMQ3NVQURZTk5NWU8wVmF1d2QueXJJVGNTeUJKWFIuYVR5dzFlYmsuLmNhIiwiaWQiOjIzNDAxMzAwNTAwMSwibmV3VXNlck5vdG9rZW4iOnsiZmlyc3RfbmFtZSI6ImhmZmZkZmRmIiwibGFzdF9uYW1lIjoiZmVrbGl4IiwiZW1haWwiOiJjbGluZ3RvbmV5aXR1b3lvQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJE1EQk9PZXQ5QWVMQ3NVQURZTk5NWU8wVmF1d2QueXJJVGNTeUJKWFIuYVR5dzFlYmsuLmNhIiwiYWRkcmVzcyI6ImJsb2NrIDE5OSBmbGF0IDQiLCJwaG9uZV9udW1iZXIiOiIwODAxMjM0MjQ1OSIsImdlbmRlciI6Im1hbGUiLCJpc19BZG1pbiI6dHJ1ZX0sImlhdCI6MTU2MTk3NjY0MH0.P5L7HTKcofHiElkLA86hNSPMl0yxRgEllyJgrYaIphk')
 			.end((err, res) => {
+				if (err) done(err)
 				expect(res.status).to.equal(204);
 				done();
 			});
@@ -271,6 +282,7 @@ describe('GET and POST AD  ROUTES', () => {
 			.delete('/api/v1/property-advert/4350')
 			.set('Authorization','Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb2RlIjoiJDJiJDEwJE1EQk9PZXQ5QWVMQ3NVQURZTk5NWU8wVmF1d2QueXJJVGNTeUJKWFIuYVR5dzFlYmsuLmNhIiwiaWQiOjIzNDAxMzAwNTAwMSwibmV3VXNlck5vdG9rZW4iOnsiZmlyc3RfbmFtZSI6ImhmZmZkZmRmIiwibGFzdF9uYW1lIjoiZmVrbGl4IiwiZW1haWwiOiJjbGluZ3RvbmV5aXR1b3lvQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJE1EQk9PZXQ5QWVMQ3NVQURZTk5NWU8wVmF1d2QueXJJVGNTeUJKWFIuYVR5dzFlYmsuLmNhIiwiYWRkcmVzcyI6ImJsb2NrIDE5OSBmbGF0IDQiLCJwaG9uZV9udW1iZXIiOiIwODAxMjM0MjQ1OSIsImdlbmRlciI6Im1hbGUiLCJpc19BZG1pbiI6dHJ1ZX0sImlhdCI6MTU2MTk3NjY0MH0.P5L7HTKcofHiElkLA86hNSPMl0yxRgEllyJgrYaIphk')
 			.end((err, res) => {
+				if (err) done(err)
 				expect(res.status).to.equal(404);
 				done();
 			});
