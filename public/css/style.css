@@ -71,6 +71,15 @@ font-weight: 200;
   margin: 10px;
 }
 
+
+#banner{
+  border-bottom: 30px solid white;
+}
+.header-text{
+  color:black;
+  text-align: center;
+}
+
 @media screen and (max-width: 600px) {
   .topnav .login-container {
     float: none;
@@ -187,13 +196,18 @@ box-shadow: none;
 
 .column-grid {
   float: left;
-  width: 400px;
-  padding: 10px;
-  height: 300px; 
+  width: 393px;
+  padding: 5px;
+  height: 214px; 
   border-radius: 5px;
   border: 1px solid white;
   margin: 5px;
+  background-color:rgba(222,222,222, 0.4);
+  text-align: center;
 
+}
+h3{
+  padding-top:35px;
 }
 
 .grid:after {
@@ -203,12 +217,16 @@ box-shadow: none;
 }
 
 .img{
-  height:150px;
-  width:130px;
-  margin:3px;
+  height:170px;
+  width:180px;
+  margin-right:5px;
+  margin-left:20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
   background-color:white;
   border: 5px solid grey; 
   border-radius: 20px;
+  
 }
 
 .property-float img{
@@ -268,7 +286,7 @@ box-shadow: none;
   box-shadow: none;
   transition: 0.25s;
   display: inline;
-  width: 250px;
+  width:250px;
   margin: 0 auto;
 }
 
@@ -309,8 +327,7 @@ box-shadow: none;
   font-family: inherit;
   margin: 0;
 }
-
-. .dropdown:hover .dropbtn, .dropbtn:focus {
+ .dropdown:hover .dropbtn, .dropbtn:focus {
   background-color: grey;
 }
 
@@ -393,16 +410,52 @@ box-shadow: none;
  
 #footer {
   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   height:25px;
-   padding-top: 5px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height:45px;
+  padding-top: 15px;
   background-color: #efefef;
   text-align: center;
-  font-size: 13px;
+  font-size: 16px;
   }
 
   .grid .column-grid a{
     text-decoration: none;
   }
+
+
+  /* user property */
+
+
+  .column-grid-Property{
+    
+    margin-right: 50px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    width:300px;
+    height: 350px;
+    float: left;  
+   
+  }
+  .grid-property{
+    background-color:rgba(222,222,222, 0.4) ;
+    
+  }
+  .h3-property{
+    text-align:center;
+    
+  }
+
+
+.img-property{
+  height:290px;
+  width:300px;
+  margin-right:20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  background-color:white;
+  border: 5px solid grey; 
+  border-radius: 20px;
+  
+}
