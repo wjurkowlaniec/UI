@@ -206,6 +206,10 @@ box-shadow: none;
 
 }
 
+h3{
+  padding-top:35px;
+}
+
 .grid:after {
   content: "";
   display: table;
@@ -215,6 +219,7 @@ box-shadow: none;
 .img{
   height:170px;
   width:180px;
+  margin-right:5px;
   margin-right:20px;
   margin-bottom: 20px;
   margin-top: 20px;
