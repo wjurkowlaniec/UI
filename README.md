@@ -28,7 +28,7 @@
 
 # DEMO
 
-![alt text](image.jpg)
+
 
 # Build With
 - CSS
@@ -38,8 +38,7 @@
 ## Middleware
 - Multer 
 - body-Parser
--
--
+
 
 ## API End Points
 - GET /api/v1/property   -Get all Property
