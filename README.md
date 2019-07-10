@@ -28,7 +28,7 @@
 
 # DEMO
 
-![alt text](image.jpg)
+
 
 # Build With
 - CSS
