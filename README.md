@@ -1,2 +1,2 @@
-[![Coverage Status](https://coveralls.io/repos/github/Byadiso/UI/badge.svg?branch=master)](https://coveralls.io/github/Byadiso/UI?branch=master)
+[![Maintainability](https://api.codeclimate.com/v1/badges/f8910ac7a64bcd78c3a6/maintainability)](https://codeclimate.com/github/Byadiso/UI/maintainability) [![Coverage Status](https://coveralls.io/repos/github/Byadiso/UI/badge.svg?branch=master)](https://coveralls.io/github/Byadiso/UI?branch=master) [![Test Coverage](https://api.codeclimate.com/v1/badges/f8910ac7a64bcd78c3a6/test_coverage)](https://codeclimate.com/github/Byadiso/UI/test_coverage)
 # UI
