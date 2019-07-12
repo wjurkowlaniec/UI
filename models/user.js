@@ -1,33 +1,52 @@
-/* eslint-disable no-lone-blocks */
+import passwordHash from 'password-hash'
 
-import uuid from 'uuid';
-import data from '../data/data';
+// Define a class for creating a user
+class user {
+    constructor() {
+        this.users = [
+            {
+                id: 1,
+                email: 'nganatech@gmail.com',
+                firstname: 'tech',
+                lastname: 'ngana',
+                password: '1',
+                address: 'kigali',
+                PhoneNumber: '08788787',
+                status: 'Not login',
+                isadmin: true,
+            },
+        ]
+    }
 
+    userEmail(data) {
+        const findemail = this.users.find(oneusers => oneusers.email === data)
+        return findemail
+    }
 
-class UserModel {
-	signup(details) {
-		const newUser = {...details };
+    signupuser(info) {
+        const insertuser = {
+            id: this.users.length + 1,
+            firstname: info.firstname,
+            lastname: info.lastname,
+            PhoneNumber: info.PhoneNumber,
+            email: info.email,
+            password: this.setPassword(info.password),
+            address: info.address,
+            status: 'Not login',
+            isadmin: 'false',
+        }
+        this.users.push(insertuser)
+        return insertuser
+    }
 
-    const already = data.users.find(user => user.email === newUser.email);
-		if (already) {
-			return { status: 301, message: 'User already exist' };
-		}
-		newUser.id = uuid.v4();
-		data.users.push(newUser);
-		return data.users[data.users.indexOf(newUser)];
-	}
-
-	login({ email, password }) {
-
-    const me = data.users.find(user => user.email === email);
-		if (me) {
-			if (me.password === password) {
-				return me;
-			}
-			return { err: 'password incorrect' };
-		}
-		return { err: 'User not found' };
-	}
+    setPassword(password) {
+        const hashedPassword = passwordHash.generate(password)
+        return (this.password = hashedPassword)
+    }
+    getuser(id) {
+        const finduser = this.users.find(fetchusers => fetchusers.id == id)
+        return finduser
+    }
 }
 
-export default  new UserModel();
+export default new user()

@@ -1,43 +1,34 @@
-/* eslint-disable no-console */
-import express from 'express';
-import bodyParser from 'body-parser';
-import propertyRoute from './routes/property';
-import userRoute from './routes/user';
-// import { multerUploads, dataUri } from './middlewares/multer';
+import express from 'express'
+import router from './routes/routes'
+import dotenv from 'dotenv'
 
+dotenv.config()
 
+const app = express()
 
-const PORT = process.env.PORT || 3000;
-const app = express();
+app.use(express.urlencoded({ extended: false }))
+app.use(express.json())
 
+app.use(router)
 
-// cloudinary upload //
-
-
-// app.use('*', cloudinaryConfig);
-
-// app.post('/upload', multerUploads, uploadCloud);
-
-
-
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
 app.get('/', (req, res) => {
-	res.status(200).json('Welcome to this Property World ');
-});
+    res.status(200).json({
+        status: 200,
+        message:
+            'Welcome to Property Pro Lite you can search properties for sale or rent!',
+    })
+})
 
-app.use('/api/v1/property', propertyRoute);
-app.use('/api/v1/auth', userRoute);
+app.use('*', (req, res) => {
+    res.status(400).json({
+        status: 400,
+        message: "Sorry this router doesn't exist !",
+    })
+})
 
+const port = process.env.PORT || 3000
+app.listen(port, () =>
+    console.log('Welcome to MY Property Pro Lite Land Server!!....')
+)
 
-// app.post('/upload', multerUploads, (req, res) => {
-// 	console.log('req.file :', req.file);
-// 	});
-
-app.listen(PORT, () => {
-	console.log(`server listening on port ${PORT}...`);
-});
-
-
-export default app; 
+export default app

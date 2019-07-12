@@ -1,98 +1,57 @@
-/* eslint-disable prefer-const */
+import moment from 'moment'
 
-/* eslint-disable space-infix-ops */
-/* eslint-disable guard-for-in */
-/* eslint-disable no-restricted-syntax */
-import uuid from 'uuid';
-import moment from 'moment';
-import data from '../data/data';
+class Property {
+    constructor() {
+        this.properties = []
+    }
 
-// {
-// “id” : Integer,
-// “owner” : Integer, // user id
-// “status” : String, // sold,available - default is available
-// “price” : Float,
-// “state” : String, // State where property is located
-// “city” : String, // City where property is located
-// “address” : String,
-// “type” : String, // 2 bedroom, 3 bedroom etc
-// “created_on” : DateTime,
-// “image_url” : String,
-// ...
-// }
-class PropertyModel {
-	create(details) {
-		const newProperty = { ...details };
-		newProperty.id = uuid.v4();
-		newProperty.status = 'available';
-		newProperty.created_on = moment.now();
-		data.properties.push(newProperty);
-		return { status: 'success', code:201, data:data.properties[data.properties.indexOf(newProperty)]};
-	}
+    findall(query = {}) {
+        if (query.type) {
+            const propertytype = this.properties.find(
+                oneproperty => oneproperty.type === query.type
+            )
+            return propertytype
+        }
+    }
 
-	findOne(id) {
-		const property = data.properties.find(prop => prop.id === id);
-		return property;
-	}
+    findOne(PropertyId) {
+        const foundproperty = this.properties.find(
+            property => property.id === parseInt(PropertyId)
+        )
+        return foundproperty
+    }
 
-	findAll() {
-		return data.properties;
-	}
+    findPro(propertyid) {
+        const property = this.properties.findIndex(
+            property => property.id === parseInt(propertyid)
+        )
+        return property
+    }
 
-	search(input) {
-		const keys = Object.keys(input);
-		const result = data.users.filter((property) => {
-			for (let prop in property) {
-				for (let index = 0; index < keys.length; index++) {
-					let check = keys[index];
-					// eslint-disable-next-line no-undef
-					if (check === prop) {
-						if (input[check] == property[check]) {
-							return property;
-						}
-					}
-				}
-			}
-		});
-		return result;
-	}
+    deletePro(id) {
+        const findproperty = this.findOne(id)
+        const indexof = this.properties.indexOf(findproperty)
+        const deletedproperty = this.properties.splice(indexof, 1)
+        return deletedproperty
+    }
 
-	delete(id) {
-		const property = this.findOne(id);
-		if (property) {
-			const index = data.properties.indexOf(property);
-			data.properties.splice(index, 1);
-			return { status: 200, message: 'property deleted successfully' };
-		}
-		return { error: 'not found' };
-	}
-
-	update(id, details) {
-		const property = this.findOne(id);
-		if (property) {
-			const index = data.properties.indexOf(property);
-			for (const prop in details) {
-				for (const sameprop in property) {
-					if (prop === sameprop) {
-						property[prop] = details[sameprop];
-					}
-				}
-			}
-
-			return data.properties.splice(index, 1, property);
-		}
-		return { error: 'not found' };
-	}
-
-	sold(id) {
-		const property = this.findOne(id);
-		const index = data.properties.indexOf(property);
-		if (property) {
-			property.status = 'sold';
-			data.properties.splice(index, 1, property);
-			return data.properties[index];
-		}
-	}
+    createPro(data, userInfo, url) {
+        const inserProp = {
+            id: this.properties.length + 1,
+            created_On: moment.utc().format('DD-MM-YYYY HH:mm:ss'),
+            owner: userInfo.id,
+            ownerPhoneNumber: userInfo.PhoneNumber,
+            ownerEmail: userInfo.email,
+            status: 'available',
+            type: data.type,
+            city: data.city,
+            address: data.address,
+            price: data.price,
+            image_url: url.image_url,
+        }
+        this.properties.push(inserProp)
+        return inserProp
+    }
 }
 
-export default new PropertyModel();
+export default new Property()
