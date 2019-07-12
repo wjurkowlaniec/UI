@@ -170,9 +170,9 @@ class PropertyCtrl {
     //delete property function
     static deletePro(req, res) {
         const { id } = req.params
-        const findloan = model.findproperty(id)
+        const findloan = model.findPro(id)
         if (findloan > -1) {
-            model.deleteproperty(id)
+            model.deletePro(id)
             return server(res, 200, 'property successfully deleted')
         } else {
             return server(res, 400, 'could not find that property')
