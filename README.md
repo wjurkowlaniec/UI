@@ -1,5 +1,6 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/f8910ac7a64bcd78c3a6/maintainability)](https://codeclimate.com/github/Byadiso/UI/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/f8910ac7a64bcd78c3a6/test_coverage)](https://codeclimate.com/github/Byadiso/UI/test_coverage)
 [![Coverage Status](https://coveralls.io/repos/github/Byadiso/UI/badge.svg?branch=master)](https://coveralls.io/github/Byadiso/UI?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/Byadiso/UI/badge.svg)](https://coveralls.io/github/Byadiso/UI)
 
 # TABLE OF CONTENTS
 
