@@ -35,10 +35,10 @@ class PropertyCtrl {
         } else {
             const checkproperty = model.findall(req.query)
             if (checkproperty) {
-                return server(res, 200, 'List of properties', checkproperty)
+                return server(res, 200, 'All properties', checkproperty)
             }
             if (!type) {
-                return server(res, 200, 'List of all properties', properties)
+                return server(res, 200, 'All properties', properties)
             } else {
                 return server(res, 404, "can't find any property")
             }

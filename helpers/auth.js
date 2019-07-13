@@ -24,12 +24,12 @@ const decodeToken = token => {
 const UseraccessRequired = (req, res, next) => {
     const { token } = req.headers
     if (!token) {
-        return server(res, 400, 'Token needed to get access to this page')
+        return server(res, 400, 'Token is needed to get access ')
     }
     const now = moment().unix()
     const decodedToken = decodeToken(token)
     if (now > decodedToken.expiration) {
-        res.status(400).send({ error: 'Token expired' })
+        res.status(400).send({ error: 'Oops, Your is Token expired' })
     } else {
         req.body.userId = decodedToken.sub.userId
         req.body.isadmin = decodedToken.sub.isadmin
@@ -39,7 +39,7 @@ const UseraccessRequired = (req, res, next) => {
             return server(
                 res,
                 403,
-                'Not authorized to this page you must be login before accessing to this page'
+                'Not authorized , you must be login before accessing to your  page'
             )
         }
     }

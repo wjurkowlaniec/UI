@@ -1,6 +1,5 @@
 import passwordHash from 'password-hash'
 
-// Define a class for creating a user
 class user {
     constructor() {
         this.users = [
@@ -9,10 +8,10 @@ class user {
                 email: 'nganatech@gmail.com',
                 firstname: 'tech',
                 lastname: 'ngana',
-                password: '1',
+                password: '112326746856',
                 address: 'kigali',
                 PhoneNumber: '08788787',
-                status: 'Not login',
+                status: 'Notlogin',
                 isadmin: true,
             },
         ]
@@ -22,7 +21,6 @@ class user {
         const findemail = this.users.find(oneusers => oneusers.email === data)
         return findemail
     }
-
     signupuser(info) {
         const insertuser = {
             id: this.users.length + 1,
@@ -32,8 +30,8 @@ class user {
             email: info.email,
             password: this.setPassword(info.password),
             address: info.address,
-            status: 'Not login',
-            isadmin: 'false',
+            status: 'Notlogin',
+            isadmin: false,
         }
         this.users.push(insertuser)
         return insertuser
