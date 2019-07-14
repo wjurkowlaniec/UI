@@ -6,7 +6,7 @@
     "scripts": {
         "test": "nyc mocha --require babel-polyfill --require babel-register --exec babel-node tests/ --exit",
         "build": "babel server.js --out-dir build",
-        "start": "node --exec babel-node server.js",
+        "start": "nodemon --exec babel-node server.js",
         "coveralls": "nyc report --reporter=text-lcov | coveralls"
     },
     "author": "",
@@ -24,6 +24,7 @@
         "lodash": "^4.17.14",
         "moment": "^2.24.0",
         "multer": "^1.4.1",
+        "nodemon": "^1.19.1",
         "password-hash": "^1.2.2",
         "uuid": "^3.3.2"
     },
@@ -42,7 +43,6 @@
         "joi": "^14.3.1",
         "mocha": "^6.1.4",
         "mocha-lcov-reporter": "^1.3.0",
-        "nodemon": "^1.19.1",
         "nyc": "^14.1.1"
     }
 }
